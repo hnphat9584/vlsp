@@ -1,0 +1,56 @@
+asr_ser_project/
+├── .git/                      # Git repository for version control
+├── .vscode/                   # VS Code specific settings (e.g., recommended extensions, launch configs)
+├── data/                      # All raw and processed data goes here
+│   ├── raw/                   # Original, untouched audio datasets (e.g., RAVDESS, CREMA-D)
+│   │   ├── ravdess/
+│   │   └── crema-d/
+│   ├── processed/             # Cleaned, augmented, or featurized data
+│   │   ├── asr_audio_text/    # Audio segments and corresponding transcripts
+│   │   └── ser_audio_emotion/ # Audio segments and emotion labels
+│   ├── features/              # Extracted features (e.g., MFCCs, prosodic features)
+│   │   ├── mfccs/
+│   │   └── other_features/
+├── notebooks/                 # Jupyter Notebooks for experimentation, EDA, and model prototyping
+│   ├── 01_data_exploration.ipynb
+│   ├── 02_asr_model_dev.ipynb
+│   ├── 03_ser_model_dev.ipynb
+│   └── 04_integration_testing.ipynb
+├── src/                       # Core source code for models, processing, and utilities
+│   ├── asr/                   # ASR-specific modules
+│   │   ├── __init__.py
+│   │   ├── model.py           # ASR model definition (e.g., Transformer, RNN)
+│   │   ├── dataset.py         # Data loading and preprocessing for ASR training
+│   │   └── inference.py       # ASR inference functions
+│   ├── ser/                   # SER-specific modules
+│   │   ├── __init__.py
+│   │   ├── model.py           # SER model definition (e.g., CNN-LSTM)
+│   │   ├── dataset.py         # Data loading and preprocessing for SER training
+│   │   └── inference.py       # SER inference functions
+│   ├── utils/                 # General utility functions (e.g., audio manipulation, feature extraction)
+│   │   ├── __init__.py
+│   │   └── audio_utils.py
+│   │   └── feature_extraction.py
+│   └── main.py                # Main script to run the combined ASR/SER system or API
+├── models/                    # Trained model weights and configurations
+│   ├── asr_model/
+│   │   ├── best_model.pt      # PyTorch model state_dict or TensorFlow saved_model
+│   │   └── config.json
+│   ├── ser_model/
+│   │   ├── best_model.h5
+│   │   └── params.yaml
+├── results/                   # Output of experiments, evaluations, and final predictions
+│   ├── asr_transcriptions/    # Text outputs from ASR
+│   ├── ser_emotions/          # Emotion labels from SER
+│   ├── plots/                 # Visualizations and charts
+│   └── reports/               # Evaluation reports (e.g., WER, accuracy metrics)
+├── app/                       # Optional: For web application or API deployment
+│   ├── __init__.py
+│   ├── api.py                 # FastAPI or Flask endpoints
+│   ├── static/                # CSS, JS, images for web UI
+│   └── templates/             # HTML templates for web UI
+├── README.md                  # Project overview, setup instructions, how to run
+├── requirements.txt           # Python package dependencies for pip
+├── environment.yaml           # Conda environment definition
+├── .gitignore                 # Files and directories to be ignored by Git
+└── LICENSE                    # Project license
